@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Player JSON Generator</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .field { margin: 10px 0; }
+        label { display: inline-block; width: 150px; }
+        input, select, textarea { width: 300px; padding: 5px; }
+        button { padding: 10px 20px; margin: 10px 0; }
+        pre { background: #f5f5f5; padding: 15px; margin-top: 20px; }
+        .contact { border: 1px solid #ccc; padding: 10px; margin: 5px 0; }
+        .add-btn { background: #4CAF50; color: white; border: none; cursor: pointer; }
+        .remove-btn { background: #f44336; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<form id="playerForm">
+    <div class="field">
+        <label>Основной никнейм:</label>
+        <input type="text" name="primary_name">
+    </div>
+
+    <div class="field">
+        <label>Дополнительные никнеймы (через запятую):</label>
+        <input type="text" name="names" placeholder="name1, name2, name3">
+    </div>
+
+    <h3>Контакты игрока</h3>
+    <div id="contacts">
+        <div class="contact">
+            <div class="field">
+                <label>Тип контакта:</label>
+                <select name="contact_type">
+                    <option value="1">VK</option>
+                    <option value="2">Telegram</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Значение контакта (ссылка):</label>
+                <input type="text" name="contact_value" placeholder="URL">
+            </div>
+            <div class="field">
+                <label>Заметка о контакте (например, 'устаревший'):</label>
+                <input type="text" name="contact_note">
+            </div>
+            <button type="button" class="remove-btn" onclick="removeContact(this)">Удалить контакт</button>
+        </div>
+    </div>
+    <button type="button" class="add-btn" onclick="addContact()">Добавить новый контакт</button>
+
+    <h3>Устройство</h3>
+    <div class="field">
+        <label>ОС:</label>
+        <select name="device_os">
+            <option value="1">Android</option>
+            <option value="2">Windows</option>
+            <option value="3">iOS</option>
+            <option value="4">Linux</option>
+            <option value="5">MacOS</option>
+            <option value="6">FireOS</option>
+            <option value="7">PlayStation</option>
+            <option value="8">Nintendo Switch</option>
+            <option value="9">Xbox</option>
+        </select>
+    </div>
+
+    <div class="field">
+        <label>Геймпад:</label>
+        <input type="text" name="device_gamepad">
+    </div>
+
+    <div class="field">
+        <label>Частота обновления экрана (Гц):</label>
+        <input type="number" name="device_refresh_rate" value="60">
+    </div>
+
+    <div class="field">
+        <label>Тир:</label>
+        <select name="tier">
+            <option value="1">C</option>
+            <option value="2">B</option>
+            <option value="3">A</option>
+            <option value="4">S</option>
+        </select>
+    </div>
+
+    <div class="field">
+        <label>Ссылка на YouTube:</label>
+        <input type="text" name="youtube">
+    </div>
+
+    <div class="field">
+        <label>Заметка о игроке:</label>
+        <textarea name="note" rows="3"></textarea>
+    </div>
+
+    <div class="field">
+        <label>Глобальный рейтинг:</label>
+        <input type="number" name="global_rating" value="0">
+    </div>
+
+    <button type="button" onclick="generateJSON()">Generate JSON</button>
+</form>
+
+<pre id="result"></pre>
+
+<script src="script.js"></script>
+</body>
+</html>
