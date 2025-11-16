@@ -29,26 +29,7 @@
     </div>
 
     <h3>Контакты игрока</h3>
-    <div id="contacts">
-        <div class="contact">
-            <div class="field">
-                <label>Тип контакта:</label>
-                <select name="contact_type">
-                    <option value="1">VK</option>
-                    <option value="2">Telegram</option>
-                </select>
-            </div>
-            <div class="field">
-                <label>Значение контакта (ссылка):</label>
-                <input type="text" name="contact_value" placeholder="URL">
-            </div>
-            <div class="field">
-                <label>Заметка о контакте (например, 'устаревший'):</label>
-                <input type="text" name="contact_note">
-            </div>
-            <button type="button" class="remove-btn" onclick="removeContact(this)">Удалить контакт</button>
-        </div>
-    </div>
+    <div id="contacts"></div>
     <button type="button" class="add-btn" onclick="addContact()">Добавить новый контакт</button>
 
     <h3>Устройство</h3>

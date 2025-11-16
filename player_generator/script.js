@@ -64,5 +64,3 @@ function generateJSON() {
     document.getElementById('result').textContent = JSON.stringify(player, null, 0);
     return JSON.stringify(player, null, 0);
 }
-
-addContact();
