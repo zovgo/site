@@ -28,12 +28,17 @@ function removeContact(button) {
 }
 
 function generateJSON() {
+    const namesInput = document.querySelector('input[name="names"]').value
+        .split(',')
+        .map(s => s.trim())
+        .filter(s => s !== '');
+    const shortcutsInput = document.querySelector('input[name="shortcuts"]').value
+        .split(',')
+        .map(s => s.trim())
+        .filter(s => s !== '');
     const player = {
         primary_name: document.querySelector('input[name="primary_name"]').value,
-        names: document.querySelector('input[name="names"]').value
-            .split(',')
-            .map(s => s.trim())
-            .filter(s => s !== ''),
+        names: namesInput.length > 0 ? namesInput : null,
         contacts: [],
         device: {
             os: parseInt(document.querySelector('select[name="device_os"]').value) || 1,
@@ -43,7 +48,8 @@ function generateJSON() {
         tier: parseInt(document.querySelector('select[name="tier"]').value) || 0,
         youtube: document.querySelector('input[name="youtube"]').value,
         note: document.querySelector('textarea[name="note"]').value,
-        global_rating: parseInt(document.querySelector('input[name="global_rating"]').value) || 0
+        global_rating: parseInt(document.querySelector('input[name="global_rating"]').value) || 0,
+        shortcuts: shortcutsInput.length > 0 ? shortcutsInput : null,
     };
 
     const contactElements = document.querySelectorAll('.contact');

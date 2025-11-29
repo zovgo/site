@@ -36,6 +36,7 @@
     <div class="field">
         <label>ОС:</label>
         <select name="device_os">
+            <option value="0">Not specified</option>
             <option value="1">Android</option>
             <option value="2">Windows</option>
             <option value="3">iOS</option>
@@ -82,6 +83,11 @@
     <div class="field">
         <label>Глобальный рейтинг:</label>
         <input type="number" name="global_rating" value="0">
+    </div>
+
+    <div class="field">
+        <label>Ярлыки</label>
+        <input type="text" name="shortcuts" placeholder="name1, name2, name3">
     </div>
 
     <button type="button" onclick="generateJSON()">Generate JSON</button>
