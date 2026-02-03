@@ -70,3 +70,7 @@ function generateJSON() {
     document.getElementById('result').textContent = JSON.stringify(player, null, 0);
     return JSON.stringify(player, null, 0);
 }
+
+function copyJSON() {
+    navigator.clipboard.writeText(document.getElementById('result').textContent)
+}
