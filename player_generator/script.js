@@ -48,7 +48,6 @@ function generateJSON() {
         tier: parseInt(document.querySelector('select[name="tier"]').value) || 0,
         youtube: document.querySelector('input[name="youtube"]').value,
         note: document.querySelector('textarea[name="note"]').value,
-        global_rating: parseInt(document.querySelector('input[name="global_rating"]').value) || 0,
         shortcuts: shortcutsInput.length > 0 ? shortcutsInput : null,
     };
 
